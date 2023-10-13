@@ -1,0 +1,181 @@
+{
+  "name": "unplugin-i18n-merger",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.8.0",
+  "description": "Merge i18n messages from templates to a single file",
+  "author": "Mehmet - productdevbook.com",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/productdevbook",
+  "homepage": "https://github.com/productdevbookcom/unplugin-i18n-merger",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/productdevbookcom/unplugin-i18n-merger.git"
+  },
+  "bugs": "https://github.com/productdevbookcom/unplugin-i18n-merger/issues",
+  "keywords": [
+    "i18n",
+    "vue",
+    "vite",
+    "nuxt",
+    "rollup",
+    "webpack",
+    "esbuild",
+    "unplugin",
+    "i18n-merger",
+    "i18n-template"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./vite": {
+      "import": {
+        "types": "./dist/unplugin/vite.d.ts",
+        "default": "./dist/unplugin/vite.js"
+      },
+      "require": {
+        "types": "./dist/unplugin/vite.d.cts",
+        "default": "./dist/unplugin/vite.cjs"
+      }
+    },
+    "./esbuild": {
+      "import": {
+        "types": "./dist/unplugin/esbuild.d.ts",
+        "default": "./dist/unplugin/esbuild.js"
+      },
+      "require": {
+        "types": "./dist/unplugin/esbuild.d.cts",
+        "default": "./dist/unplugin/esbuild.cjs"
+      }
+    },
+    "./rollup": {
+      "import": {
+        "types": "./dist/unplugin/rollup.d.ts",
+        "default": "./dist/unplugin/rollup.js"
+      },
+      "require": {
+        "types": "./dist/unplugin/rollup.d.cts",
+        "default": "./dist/unplugin/rollup.cjs"
+      }
+    },
+    "./webpack": {
+      "import": {
+        "types": "./dist/unplugin/webpack.d.ts",
+        "default": "./dist/unplugin/webpack.js"
+      },
+      "require": {
+        "types": "./dist/unplugin/webpack.d.cts",
+        "default": "./dist/unplugin/webpack.cjs"
+      }
+    },
+    "./nuxt": {
+      "import": {
+        "types": "./dist/unplugin/nuxt.d.ts",
+        "default": "./dist/unplugin/nuxt.js"
+      },
+      "require": {
+        "types": "./dist/unplugin/nuxt.d.cts",
+        "default": "./dist/unplugin/nuxt.cjs"
+      }
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/unplugin/*",
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm run build",
+    "release": "pnpm build && bumpp --commit --push --tag && pnpm publish",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage",
+    "postinstall": "npx simple-git-hooks"
+  },
+  "peerDependencies": {
+    "@nuxt/kit": "^3",
+    "@nuxt/schema": "^3",
+    "esbuild": "*",
+    "rollup": "^3",
+    "typescript": "^5",
+    "vite": ">=3",
+    "webpack": "^4 || ^5"
+  },
+  "peerDependenciesMeta": {
+    "webpack": {
+      "optional": true
+    },
+    "rollup": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    },
+    "esbuild": {
+      "optional": true
+    },
+    "@nuxt/kit": {
+      "optional": true
+    },
+    "@nuxt/schema": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@antfu/utils": "^0.7.6",
+    "@nuxt/kit": "^3.7.4",
+    "@nuxt/schema": "^3.7.4",
+    "@types/node": "^20.8.2",
+    "chokidar": "^3.5.3",
+    "consola": "^3.2.3",
+    "filter-anything": "^3.0.7",
+    "globby": "^13.2.2",
+    "merge-anything": "^5.1.7",
+    "minimatch": "^9.0.3",
+    "remove-anything": "^1.0.5",
+    "schob": "^1.0.2",
+    "unplugin": "^1.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "1.0.0-beta.19",
+    "@vitest/coverage-v8": "^0.34.6",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.50.0",
+    "lint-staged": "^14.0.1",
+    "nodemon": "^3.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vitest": "^0.34.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "pnpm eslint . --fix"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

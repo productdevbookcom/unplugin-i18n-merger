@@ -1,0 +1,8 @@
+{
+  "error": {
+    "pageNotFound": "Page not found!",
+    "somethingWentWrong": "Something went wrong!"
+  },
+  "hello": "Hello",
+  "world": "World"
+}
