@@ -10,8 +10,8 @@ export interface ModuleOptions extends Options {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'tsI18n',
-    configKey: 'tsI18n',
+    name: 'i18nMerger',
+    configKey: 'i18nMerger',
   },
   setup(options, _nuxt) {
     addVitePlugin(() => vite(options))
