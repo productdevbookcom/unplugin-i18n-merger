@@ -1,7 +1,7 @@
 {
   "name": "unplugin-i18n-merger",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "packageManager": "pnpm@8.8.0",
   "description": "Merge i18n messages from templates to a single file",
   "author": "Mehmet - productdevbook.com",
