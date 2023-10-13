@@ -7,7 +7,7 @@ import { createContext } from '../../context'
 export default createUnplugin<Partial<Options>>((options) => {
   let ctx = createContext(options)
   return {
-    name: 'unplugin-starter',
+    name: 'unplugin-i18n-merger',
     enforce: 'post',
     vite: {
       async configResolved(config: ResolvedConfig) {
