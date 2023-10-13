@@ -84,6 +84,10 @@ export default defineNuxtConfig({
   modules: [
     ['unplugin-i18n-merger/nuxt', { /* options */ }],
   ],
+
+  i18nMerger: {
+    /* options */
+  },
 })
 ```
 
